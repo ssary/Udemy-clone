@@ -53,3 +53,36 @@ button:hover{
     font-weight: bolder;
     padding: 10px 10px 10px 10px;
 }
+
+/* small screens */
+@media (min-width: 1px){
+    .navbar > *{
+        /* hide all elements */
+        display: none;
+    }
+    /* show img */
+    button.mobileNav{
+        display: flex;
+    }
+    div.mobileNav{
+        display: flex;
+    }
+    .navbar{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}
+
+/* large screens */
+@media (min-width: 850px){
+    .navbar{
+        flex-direction: row;
+    }
+    .navbar > *{
+        /* show all elements */
+        display: flex;
+    }
+    button.mobileNav{
+        display: none;
+    }
+}
