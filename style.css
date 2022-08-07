@@ -1,0 +1,55 @@
+
+.navbar{
+    display: flex;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+.navbar > *{
+    margin: .5% .5% .5% .5%;
+}
+.search_bar{
+    display: flex;
+    padding: 9px;
+    font-size: 17px;
+    border: 1px solid black;
+    background-color: #f1f1f1;
+    width: 53%;
+    border-radius: 30px;
+    flex-shrink: 15;
+}
+.search_bar input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    background-color: #f1f1f1;
+}
+.search_bar button{
+    border: 0;
+    background-color: #f1f1f1;
+}
+
+.navbar > button{
+    border:0;
+    background-color: white;
+    font-size: medium; 
+}
+
+button:hover{
+    color: rgb(185, 20, 185);
+    cursor: pointer;
+}
+
+.navbar .LL{
+    border: 2px solid black;
+    font-weight: bolder;
+    padding: 10px 10px 10px 10px;
+}
+
+#SignUp{
+    color:white;
+    background-color:black;
+    font-weight: bolder;
+    padding: 10px 10px 10px 10px;
+}
