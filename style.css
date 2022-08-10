@@ -117,6 +117,10 @@ section{
     background-color: #f1f1f1;
     cursor: pointer;
 }
+#coursesP2{
+    width: 70%;
+    font-size: large;
+}
 
 .course_card{
     width: 18%;
@@ -168,6 +172,17 @@ section{
         margin-left: 20%;
         margin-right: 20%;
     }
+    #coursesP2{
+        display: none;
+    }
+    .course_card{
+        width: 40%;
+        margin-left: 5%;
+    }
+    #main_courses div{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 /* large screens */
@@ -193,5 +208,14 @@ section{
         width: 20%;
         margin-left: 10%;
         margin-right: 10%;
+    }
+    #coursesP2{
+        display: flex;
+    }
+    .course_card{
+        width: 18%;
+        margin-top: 5%;
+        margin-left: 1%;
+        margin-right: 1%;
     }
 }
