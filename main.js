@@ -58,6 +58,39 @@ function createCards(course){
     console.log(card);  
 }
 
+let noCourses = document.createElement('p');
+noCourses.textContent = 'Sorry there is no course with this search criteria';
+noCourses.style.fontSize = 'larger';
+noCourses.id = 'sorry_noCourses'
+noCourses.style = 'display:none';
+courseContainer.appendChild(noCourses);
+
+let submitButton = document.querySelector('.search_submit');
+submitButton.addEventListener("click",(event)=>{
+    event.preventDefault();
+    let val = submitButton.nextElementSibling.value;
+    if(val !== ''){
+        let coursesDisplayed = document.querySelectorAll('.course_card');
+
+        let sorry = document.getElementById('sorry_noCourses');
+        if(sorry !== null)
+            sorry.style= 'display:none';
+
+        for(let i=0;i<coursesDisplayed.length;i++){
+            coursesDisplayed[i].style = 'display:block';
+        }
+        let cnt = coursesDisplayed.length;
+        for(let i=0;i<coursesDisplayed.length;i++){
+            if(!coursesDisplayed[i].querySelector('p').textContent.toLowerCase().includes(val.toLowerCase())){
+                coursesDisplayed[i].style = 'display:none';
+                cnt--;
+            }
+        }
+        if(cnt == 0){
+            sorry.style = 'display:block';
+        }
+    }
+});
 
 }
 main();
