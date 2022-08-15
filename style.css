@@ -168,7 +168,7 @@ section{
         
     }
     header img{
-        width: 50%;
+        width: 30%;
         margin-left: 20%;
         margin-right: 20%;
     }
@@ -181,7 +181,6 @@ section{
     }
     #main_courses div{
         flex-wrap: wrap;
-        justify-content: center;
     }
 }
 
