@@ -4,7 +4,6 @@ let courses = await fetch('http://localhost:3000/courses')
 .then((Response)=>Response.json())
 .then((data)=>data);
 
-
 let courseContainer = document.querySelector('.course-container');
 courses.forEach(createCards);
 function createCards(course){
@@ -32,7 +31,6 @@ function createCards(course){
     
     let rat = course.rating;
     rat = Math.round(rat);
-    console.log(rat);
     for(let i=0;i<rat;i++){
         let checked = document.createElement('span');
         checked.className = "fa fa-star checked";
@@ -54,8 +52,7 @@ function createCards(course){
     price.textContent = '$' + (course.price);
     card.appendChild(price);
 
-    courseContainer.appendChild(card);
-    console.log(card);  
+    courseContainer.appendChild(card); 
 }
 
 let noCourses = document.createElement('p');
@@ -66,7 +63,8 @@ noCourses.style = 'display:none';
 courseContainer.appendChild(noCourses);
 
 let submitButton = document.querySelector('.search_submit');
-submitButton.addEventListener("click",(event)=>{
+
+function searchUtil(event){
     event.preventDefault();
     let val = submitButton.nextElementSibling.value;
     if(val !== ''){
@@ -90,7 +88,28 @@ submitButton.addEventListener("click",(event)=>{
             sorry.style = 'display:block';
         }
     }
-});
+}
+// add search utility to the search bar
+submitButton.addEventListener("click",searchUtil);
 
+let tabs = document.querySelectorAll('#Courses_head div button');
+tabs.forEach((button)=>{
+    // add class "tabs" to the tabs buttons 
+    button.className = "tabs";
+
+    // add onclick tabs
+    button.addEventListener('click', (event)=>{
+        let val = button.textContent;
+        let coursesDisplayed = document.querySelectorAll('.course_card');
+        for(let i=0;i<coursesDisplayed.length;i++){
+            coursesDisplayed[i].style = 'display:block';
+        }
+        for(let i=0;i<coursesDisplayed.length;i++){
+            if(!coursesDisplayed[i].querySelector('p').textContent.toLowerCase().includes(val.toLowerCase())){
+                coursesDisplayed[i].style = 'display:none';
+            }
+        }
+    })
+});
 }
 main();
