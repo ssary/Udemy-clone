@@ -115,12 +115,13 @@ tabs.forEach((button)=>{
 let topCategoryCards = document.querySelectorAll('.top-categories a');
 let imgscategory = document.querySelectorAll('.top-categories a img');
 imgscategory.forEach((e)=>{
-    e.style = "width:90%;";
+    e.style = "width:95%;";
 
 })
 topCategoryCards.forEach((e)=>{
     e.className = "col-lg-3 col-md-4 col-sm-12";
-    e.style = "margin-buttom:4%;margin-top:4%";
+    
+    
     
 })
 }
